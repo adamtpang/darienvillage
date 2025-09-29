@@ -42,10 +42,10 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto">
           {/* FAQ Section */}
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-navy-primary">
-              Building 6 FAQ
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-dark">
+              Building 6 <span className="text-brand-gradient">FAQ</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-brand-gray leading-relaxed">
               Common questions about purchasing and managing Building 6 units
             </p>
           </div>
@@ -53,10 +53,10 @@ const FAQ = () => {
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq) => (
               <AccordionItem key={faq.id} value={faq.id} className="glass-card-quality">
-                <AccordionTrigger className="text-left px-6 py-4 text-navy-primary font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left px-6 py-4 text-brand-dark font-bold hover:no-underline hover:text-brand-primary transition-colors">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground leading-relaxed">
+                <AccordionContent className="px-6 pb-4 text-brand-gray leading-relaxed">
                   {faq.id === "location" ? (
                     <div className="space-y-4">
                       <p>{faq.answer}</p>
