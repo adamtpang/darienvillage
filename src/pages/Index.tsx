@@ -61,7 +61,7 @@ const Index = () => {
       <DevelopmentTimeline />
 
       {/* Apartment Types Section */}
-      <section className="py-12 sm:py-20 bg-background">
+      <section className="py-20 sm:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-navy-primary">
