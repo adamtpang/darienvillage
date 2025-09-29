@@ -1,3 +1,5 @@
+import darienVillageHero from '@/assets/darien-village-hero.png';
+
 export const WhyPlace = () => {
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -37,7 +39,7 @@ export const WhyPlace = () => {
       {/* Image */}
       <div className="relative">
         <img
-          src="/src/assets/darien-village-hero.png"
+          src={darienVillageHero}
           alt="Próspera development and Roatán landscape"
           className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-lg"
           loading="lazy"

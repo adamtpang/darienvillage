@@ -1,4 +1,9 @@
 import { Button } from '@/components/ui/button';
+import typeAInterior from '@/assets/type-a-interior.png';
+import typeBInterior from '@/assets/type-b-interior.png';
+import typeCInterior from '@/assets/type-c-interior.png';
+import typeDInterior from '@/assets/type-d-interior.png';
+import typeEInterior from '@/assets/type-e-interior.png';
 
 export const Portfolio = () => {
   const apartments = [
@@ -8,7 +13,7 @@ export const Portfolio = () => {
       size: "19.44 m²",
       description: "Compact modern studio",
       annualRevenue: "$13,104",
-      image: "/src/assets/type-a-interior.png"
+      image: typeAInterior
     },
     {
       type: "Type B Studio",
@@ -16,7 +21,7 @@ export const Portfolio = () => {
       size: "26.89 m²",
       description: "Spacious studio with modern finishes",
       annualRevenue: "$14,196",
-      image: "/src/assets/type-b-interior.png"
+      image: typeBInterior
     },
     {
       type: "Type C Loft",
@@ -24,7 +29,7 @@ export const Portfolio = () => {
       size: "39.65 m²",
       description: "Loft-style with high ceilings",
       annualRevenue: "$17,472",
-      image: "/src/assets/type-c-interior.png"
+      image: typeCInterior
     },
     {
       type: "Type D One Bedroom",
@@ -32,7 +37,7 @@ export const Portfolio = () => {
       size: "46.22 m²",
       description: "Separate bedroom and living area",
       annualRevenue: "$19,656",
-      image: "/src/assets/type-d-interior.png"
+      image: typeDInterior
     },
     {
       type: "Type E Penthouse",
@@ -40,7 +45,7 @@ export const Portfolio = () => {
       size: "103.01 m²",
       description: "Premium penthouse with terrace",
       annualRevenue: "$26,208",
-      image: "/src/assets/type-e-interior.png"
+      image: typeEInterior
     }
   ];
 

@@ -1,3 +1,5 @@
+import sitePlanDetailed from '@/assets/site-plan-detailed.png';
+
 export const Building6Overview = () => {
   return (
     <div className="space-y-12">
@@ -48,7 +50,7 @@ export const Building6Overview = () => {
         {/* Master Plan Image */}
         <div className="relative">
           <img
-            src="/src/assets/site-plan-detailed.png"
+            src={sitePlanDetailed}
             alt="Darien Village Master Plan showing building layouts, amenities, and landscape design"
             className="w-full h-auto rounded-2xl shadow-lg"
             loading="lazy"

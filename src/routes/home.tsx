@@ -14,16 +14,22 @@ import { DevelopmentPhases } from '@/components/DevelopmentPhases';
 import { DevelopmentTimeline } from '@/components/DevelopmentTimeline';
 import { Portfolio } from '@/components/Portfolio';
 import darienVillageHero from '@/assets/darien-village-hero.png';
+import gallery1 from '@/assets/gallery-1.png';
+import gallery2 from '@/assets/gallery-2.png';
+import gallery3 from '@/assets/gallery-3.png';
+import gallery4 from '@/assets/gallery-4.png';
+import gallery5 from '@/assets/gallery-5.png';
+import gallery6 from '@/assets/gallery-6.png';
 
 const HomePage = () => {
   // Accommodation gallery images
   const galleryImages = [
-    '/src/assets/gallery-1.png',
-    '/src/assets/gallery-2.png',
-    '/src/assets/gallery-3.png',
-    '/src/assets/gallery-4.png',
-    '/src/assets/gallery-5.png',
-    '/src/assets/gallery-6.png'
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery6
   ];
 
   return (

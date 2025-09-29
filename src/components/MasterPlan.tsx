@@ -4,7 +4,7 @@ const MasterPlan = () => {
       <div className="max-w-4xl mx-auto">
         <div className="relative bg-white rounded-2xl shadow-sm p-4 border border-brand-sand/20 aspect-video overflow-hidden">
           <img
-            src="/public/masterplan.png"
+            src="/masterplan.png"
             alt="Darien Village master plan showing village layout and development phases"
             className="w-full h-full object-cover rounded-xl"
             loading="lazy"
