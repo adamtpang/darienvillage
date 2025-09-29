@@ -14,12 +14,14 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1280px'
 			}
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Inter', 'sans-serif'],
+				'sans': ['SUSE', 'Inter', 'system-ui', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+				'suse': ['SUSE', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -65,7 +67,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Premium Investment Platform colors
+				// Próspera-inspired Bold Colors
+				brand: {
+					primary: '#FF4500',      // Bold red-orange
+					secondary: '#FF6B35',    // Lighter red-orange
+					accent: '#FF8C69',       // Coral accent
+					white: '#FFFFFF',        // Pure white
+					dark: '#1A1A1A',        // Deep charcoal
+					gray: '#6B7280',        // Medium gray
+					light: '#F8FAFC'        // Light background
+				},
+				// Premium Investment Platform colors (preserve existing)
 				navy: {
 					primary: 'hsl(var(--navy-primary))',
 					secondary: 'hsl(var(--navy-secondary))',

@@ -145,9 +145,14 @@ All colors MUST be HSL. Professional investment-focused aesthetic.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-brand-white text-brand-dark antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'SUSE', 'Inter', system-ui, sans-serif;
   }
 
   /* Custom scrollbar */
@@ -160,30 +165,81 @@ All colors MUST be HSL. Professional investment-focused aesthetic.
   }
   
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--gold-primary));
+    background: theme(colors.brand.primary);
     border-radius: 4px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--gold-secondary));
+    background: theme(colors.brand.secondary);
   }
 }
 
 @layer components {
-  /* Enhanced Typography */
+  /* Bold Brand Typography */
   .gradient-text {
-    background: var(--gradient-luxury);
+    background: linear-gradient(135deg, theme(colors.brand.primary), theme(colors.brand.secondary), theme(colors.brand.accent));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
   }
 
-  .text-luxury {
-    background: var(--gradient-accent);
+  .text-brand-gradient {
+    background: linear-gradient(135deg, theme(colors.brand.primary), theme(colors.brand.secondary));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  /* Impact Cards */
+  .impact-card {
+    @apply bg-brand-white rounded-3xl shadow-2xl border border-gray-100;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .impact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, theme(colors.brand.primary), theme(colors.brand.secondary), theme(colors.brand.accent));
+  }
+
+  .impact-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(255, 69, 0, 0.25), 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Glass Card Enhanced */
+  .glass-card-premium {
+    @apply bg-brand-white/90 rounded-2xl shadow-xl border border-brand-primary/10;
+    backdrop-filter: blur(20px) saturate(180%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, theme(colors.brand.primary / 10%), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  .glass-card-premium:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px -12px rgba(255, 69, 0, 0.3), 0 8px 25px -8px rgba(0, 0, 0, 0.1);
+    border-color: theme(colors.brand.primary / 20%);
   }
 
   /* Mobile-First Responsive Utilities */
@@ -192,24 +248,24 @@ All colors MUST be HSL. Professional investment-focused aesthetic.
       padding-left: 1rem;
       padding-right: 1rem;
     }
-    
+
     /* Mobile-optimized text sizing */
     .text-hero-mobile {
       font-size: 1.875rem;
       line-height: 2.25rem;
     }
-    
+
     /* Mobile touch targets */
     .touch-target {
       min-height: 44px;
       min-width: 44px;
     }
-    
+
     /* Mobile spacing utilities */
     .mobile-spacing {
       padding: 1rem;
     }
-    
+
     /* Mobile card optimizations */
     .mobile-card {
       margin: 0.5rem;
@@ -219,7 +275,35 @@ All colors MUST be HSL. Professional investment-focused aesthetic.
     /* Mobile glassmorphism adjustments */
     .glass-card-quality {
       backdrop-filter: blur(20px) saturate(150%);
-      border: 1px solid hsl(var(--gold-primary) / 0.15);
+      border: 1px solid hsl(var(--brand-primary) / 0.15);
+    }
+
+    /* Reduce animations on mobile for better performance */
+    .render-float {
+      animation: renderFloat 12s ease-in-out infinite;
+    }
+
+    .render-pulse {
+      animation: renderPulse 4s ease-in-out infinite;
+    }
+
+    /* Mobile accommodation gallery */
+    .accommodation-gallery {
+      padding: 0 0.5rem;
+    }
+
+    .accommodation-item {
+      margin-bottom: 1rem;
+    }
+
+    /* Mobile-friendly Trust section */
+    .trust-partners {
+      gap: 1rem;
+    }
+
+    .trust-partners > div {
+      font-size: 0.875rem;
+      padding: 0.75rem 1rem;
     }
   }
 
@@ -453,5 +537,91 @@ All colors MUST be HSL. Professional investment-focused aesthetic.
   .animate-on-scroll.in-view {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Gallery Animation Classes */
+  .accommodation-gallery {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .accommodation-item {
+    animation: slideInScale 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+
+  .accommodation-item:nth-child(1) { animation-delay: 0.1s; }
+  .accommodation-item:nth-child(2) { animation-delay: 0.2s; }
+  .accommodation-item:nth-child(3) { animation-delay: 0.3s; }
+  .accommodation-item:nth-child(4) { animation-delay: 0.4s; }
+  .accommodation-item:nth-child(5) { animation-delay: 0.5s; }
+  .accommodation-item:nth-child(6) { animation-delay: 0.6s; }
+
+  .render-float {
+    animation: renderFloat 8s ease-in-out infinite;
+  }
+
+  .render-pulse {
+    animation: renderPulse 3s ease-in-out infinite;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(255, 69, 0, 0.3); }
+  to { box-shadow: 0 0 30px rgba(255, 69, 0, 0.6); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes renderFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) scale(1.02) rotate(1deg);
+  }
+  75% {
+    transform: translateY(-5px) scale(0.98) rotate(-0.5deg);
+  }
+}
+
+@keyframes renderPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.4);
+    filter: brightness(1.1);
   }
 }
